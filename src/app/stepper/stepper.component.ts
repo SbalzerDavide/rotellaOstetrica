@@ -22,6 +22,7 @@ import { PregnancyDateService } from '../services/pregnancy-date.service';
 import { Chip } from 'primeng/chip';
 import { InputNumber } from 'primeng/inputnumber';
 import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
 import { DatePicker } from 'primeng/datepicker';
 
 @Component({
@@ -37,6 +38,7 @@ import { DatePicker } from 'primeng/datepicker';
     Chip,
     InputNumber,
     CardModule,
+    DividerModule
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.scss',

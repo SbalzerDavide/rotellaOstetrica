@@ -77,24 +77,22 @@
           </p-fieldset>
           <p-fieldset [legend]="'date_from_weeks.title' | transloco">
             <div class="flex flex-col items-start justify-between sm:flex-row gap-6">
-              <div class="flex flex-col gap-2">
+              <div class="flex justify-between w-full">
                 <div class="flex items-center gap-2">
                   <label for="weeksFromWeeks" class="w-16">{{
                     "weeks" | transloco
                   }}</label>
                   <p-inputnumber
-                    class="w-16"
                     [(ngModel)]="weeksFromWeeks"
                     inputId="weeksFromWeeks"
                     mode="decimal"
                     spinnerMode="horizontal"
                     [inputStyle]="{ width: '3rem' }"
-                    buttonLayout="horizontal"
-                    [showButtons]="true"
                     [min]="0"
                     [max]="60"
                   />
                 </div>
+                <p-divider layout="vertical" />
                 <div class="flex items-center gap-2">
                   <label for="daysFromWeeks" class="w-16">{{
                     "days" | transloco
@@ -105,8 +103,6 @@
                     mode="decimal"
                     spinnerMode="horizontal"
                     [inputStyle]="{ width: '3rem' }"
-                    buttonLayout="horizontal"
-                    [showButtons]="true"
                     [min]="0"
                     [max]="6"
                   />
