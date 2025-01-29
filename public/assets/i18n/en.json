@@ -1,0 +1,26 @@
+{
+  "start_pregnancy": "Start Date",
+  "delivery_date": "Delivery Date",
+  "date_type": {
+    "lastMestruation": "Last mesatruation",
+    "expectedDelivery": "Expected date of delivery"
+  },
+  "first_step": {
+    "title": "Type Date",
+    "description": "Please select the type of date you want to enter"
+  },
+  "second_step": {
+    "title": "Date",
+    "description": "Please enter the date"
+  },
+  "weeks_from_date": {
+    "title": "Calculate gestational age relative to a date"
+  },
+  "date_from_weeks": {
+    "title": "calculate date from gestational age"
+  },
+  "pregnancy_summary": {
+    "title": "Pregnancy Summary"
+  },
+  "calculator": "Calculator"
+}

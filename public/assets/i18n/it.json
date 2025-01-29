@@ -1,0 +1,26 @@
+{
+  "start_pregnancy": "Data ultima mestruazione",
+  "delivery_date": "Data presunta termine",
+  "date_type": {
+    "lastMestruation": "Ultima mestruazione",
+    "expectedDelivery": "Data presunta del parto"
+  },
+  "first_step": {
+    "title": "Tipo di data",
+    "description": "Seleziona il tipo di data che desideri inserire"
+  },
+  "second_step": {
+    "title": "Data",
+    "description": "Inserisci la data"
+  },
+  "weeks_from_date": {
+    "title": "Calcola l'età gestazionale rispetto a una data"
+  },
+  "date_from_weeks": {
+    "title": "Calcola la data dall'età gestazionale"
+  },
+  "pregnancy_summary": {
+    "title": "Riepilogo della gravidanza"
+  },
+  "calculator": "Calcolatore"
+}
