@@ -3,7 +3,7 @@
   "delivery_date": "Delivery Date",
   "date_type": {
     "lastMestruation": "Last mesatruation",
-    "expectedDelivery": "Expected date of delivery"
+    "expectedDelivery": "Expected delivery"
   },
   "first_step": {
     "title": "Type Date",
