@@ -5,7 +5,7 @@
         <i class="pi pi-calendar" style="font-size: 2.5rem"></i>
         <div class="flex flex-col">
           <div>{{ "start_pregnancy" | transloco }}</div>
-          <div class="h-5">{{ startPregnancy() | date }}</div>
+          <div class="h-5">{{ startPregnancy() | date : "dd/MM/yyyy"  }}</div>
         </div>
       </div>
       <p-divider layout="vertical" />
@@ -13,7 +13,7 @@
         <i class="pi pi-calendar" style="font-size: 2.5rem"></i>
         <div class="flex flex-col">
           <div>{{ "delivery_date" | transloco }}</div>
-          <div class="h-5">{{ deliveryDate() | date }}</div>
+          <div class="h-5">{{ deliveryDate() | date : "dd/MM/yyyy"  }}</div>
         </div>
       </div>
     </div>
