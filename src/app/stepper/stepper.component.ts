@@ -1,4 +1,14 @@
-import { Component, computed, inject, input, model, output, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  ElementRef,
+  inject,
+  input,
+  model,
+  output,
+  signal,
+  viewChild,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { StepperModule } from 'primeng/stepper';
@@ -12,6 +22,7 @@ import { PregnancyDateService } from '../services/pregnancy-date.service';
 import { Chip } from 'primeng/chip';
 import { InputNumber } from 'primeng/inputnumber';
 import { CardModule } from 'primeng/card';
+import { DatePicker } from 'primeng/datepicker';
 
 @Component({
   selector: 'app-stepper',
@@ -25,7 +36,7 @@ import { CardModule } from 'primeng/card';
     FieldsetModule,
     Chip,
     InputNumber,
-    CardModule
+    CardModule,
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.scss',
@@ -46,18 +57,27 @@ export class StepperComponent {
   daysFromWeeks = model<number>(0);
   dateFromWeeks = computed(() => {
     const date = new Date(this.startPregnancy()!);
-    date.setDate(date.getDate() + this.weeksFromWeeks()! * 7 + this.daysFromWeeks()!);
+    date.setDate(
+      date.getDate() + this.weeksFromWeeks()! * 7 + this.daysFromWeeks()!
+    );
     return date;
   });
 
   weeksFromDate = signal<number>(0);
   daysFromDate = signal<number>(0);
 
+  inputDateDatepicker = viewChild<DatePicker>('inputDateDatepicker');
+
   pregnancyDateService = inject(PregnancyDateService);
 
   selectDateType(type: DateType) {
     this.dateType.set(type);
     this.activeIndex.set(2);
+    setTimeout(() => {
+      this.inputDateDatepicker()
+        ?.el?.nativeElement?.querySelector('input')
+        ?.click();
+    }, 10);
   }
 
   selectDate() {
@@ -76,7 +96,10 @@ export class StepperComponent {
   }
 
   selectDateWeeksFromdate() {
-    const { weeks, days } = this.pregnancyDateService.getWeeks(this.startPregnancy()!, this.inputDateForWeeks()!);
+    const { weeks, days } = this.pregnancyDateService.getWeeks(
+      this.startPregnancy()!,
+      this.inputDateForWeeks()!
+    );
     this.weeksFromDate.set(weeks);
     this.daysFromDate.set(days);
   }

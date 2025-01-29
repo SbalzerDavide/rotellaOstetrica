@@ -10,7 +10,7 @@
       <p-step-panel>
         <ng-template #content>
           <div class="text-lg">{{ "first_step.description" | transloco }}:</div>
-          <div class="flex justify-between">
+          <div class="flex justify-between gap-2">
             <div class="py-6">
               <p-button
                 (onClick)="selectDateType('lastMestruation')"
@@ -40,7 +40,13 @@
             {{ "second_step.description" | transloco }}:
           </div>
           <div class="card flex">
-            <p-datepicker (onSelect)="selectDate()" [(ngModel)]="inputDate" />
+            <p-datepicker
+              #inputDateDatepicker
+              placeholder="Select a date"
+              readonlyInput
+              (onSelect)="selectDate()"
+              [(ngModel)]="inputDate"
+            />
           </div>
         </ng-template>
       </p-step-panel>
@@ -50,15 +56,16 @@
       <p-step>Header III</p-step>
       <p-step-panel class="!overflow-visible">
         <ng-template #content>
-          <p-fieldset
-            [legend]="'weeks_from_date.title' | transloco"
-          >
+          <p-fieldset [legend]="'weeks_from_date.title' | transloco">
             <div class="flex items-center justify-between gap-6">
               <p-datepicker
+                placeholder="Select a date"
+                readonlyInput
+                [inputStyle]="{ width: '8rem' }"
                 (onSelect)="selectDateWeeksFromdate()"
                 [(ngModel)]="inputDateForWeeks"
               />
-              <div class="flex gap-2">
+              <div class="flex flex-col sm:flex-row gap-2">
                 <p-chip>
                   <p>{{ "weeks" | transloco }}: {{ weeksFromDate() }}</p>
                 </p-chip>
@@ -68,10 +75,8 @@
               </div>
             </div>
           </p-fieldset>
-          <p-fieldset
-            [legend]="'date_from_weeks.title' | transloco"
-          >
-            <div class="flex items-start justify-between gap-6">
+          <p-fieldset [legend]="'date_from_weeks.title' | transloco">
+            <div class="flex flex-col items-start justify-between sm:flex-row gap-6">
               <div class="flex flex-col gap-2">
                 <div class="flex items-center gap-2">
                   <label for="weeksFromWeeks" class="w-16">{{
@@ -108,7 +113,7 @@
                 </div>
               </div>
               <p-chip>
-                <p>{{ dateFromWeeks() | date }}</p>
+                <p>{{ dateFromWeeks() | date : "dd/MM/yyyy"  }}</p>
               </p-chip>
             </div>
           </p-fieldset>
