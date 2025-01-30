@@ -1,12 +1,19 @@
 <app-result-card [startPregnancy]="startPregnancy()" [deliveryDate]="deliveryDate()" [weeks]="weeks()" [days]="days()"/>
 <div class="px-6">
-  <app-stepper
+  <!-- <app-stepper
     (onUpdateDeliveryDate)="onUpdateDeliveryDate($event)"
     (onUpdateStartPregnancy)="onUpdateStartPregnancy($event)"
     [startPregnancy]="startPregnancy()"
     [deliveryDate]="deliveryDate()"
-  ></app-stepper>
+  ></app-stepper> -->
+  <app-accordion-stepper
+    (onUpdateDeliveryDate)="onUpdateDeliveryDate($event)"
+    (onUpdateStartPregnancy)="onUpdateStartPregnancy($event)"
+    [startPregnancy]="startPregnancy()"
+    [deliveryDate]="deliveryDate()"
+  />
 </div>
-<div class="flex justify-center">
-  <p-button label="Reset" (onClick)="stepper()?.reset()" />
+<div class="flex justify-center my-2">
+  <!-- <p-button label="Reset" (onClick)="stepper()?.reset()" /> -->
+  <p-button label="Reset" (onClick)="accordionStepper()?.reset()" />
 </div>

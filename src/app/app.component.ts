@@ -3,14 +3,16 @@ import { ButtonModule } from 'primeng/button';
 import { StepperComponent } from './stepper/stepper.component';
 import { PregnancyDateService } from './services/pregnancy-date.service';
 import { ResultCardComponent } from './result-card/result-card.component';
+import { AccordionStepperComponent } from "./accordion-stepper/accordion-stepper.component";
 
 @Component({
   selector: 'app-root',
   imports: [
     ButtonModule,
-    StepperComponent,
+    // StepperComponent,
     ResultCardComponent,
-  ],
+    AccordionStepperComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -18,6 +20,7 @@ export class AppComponent {
   title = 'rotella-ostetrica';
 
   stepper = viewChild(StepperComponent);
+  accordionStepper = viewChild(AccordionStepperComponent);
 
   startPregnancy = signal<Date | null>(null);
   deliveryDate = signal<Date | null>(null);

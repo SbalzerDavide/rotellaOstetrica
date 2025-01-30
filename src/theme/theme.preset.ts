@@ -6,6 +6,7 @@ import stepper from './components/stepper.preset';
 import card from './components/card.preset';
 import divider from './components/divider.preset';
 import fieldset  from "./components/fieldset.preset";
+import accordion from './components/accordion.preset';
 
 export const getAppThemePreset = () => {
   return definePreset(Aura, {
@@ -174,7 +175,8 @@ export const getAppThemePreset = () => {
       stepper,
       card,
       divider,
-      fieldset
+      fieldset,
+      accordion
     }
   } as AuraBaseDesignTokens);
 };
