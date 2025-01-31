@@ -108,6 +108,7 @@ export class StepperComponent {
   reset() {
     this.activeIndex.set(1);
     this.dateType.set(null);
+    this.inputDate.set(null);
     this.inputDateForWeeks.set(null);
     this.weeksFromDate.set(0);
     this.daysFromDate.set(0);
