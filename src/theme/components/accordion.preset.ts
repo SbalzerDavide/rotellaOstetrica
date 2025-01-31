@@ -12,7 +12,7 @@ export default {
         color: '{text.muted.color}',
         hoverColor: '{text.color}',
         activeColor: '{text.color}',
-        padding: '0.8rem',
+        padding: '0.6rem',
         fontWeight: '600',
         borderRadius: '0',
         borderWidth: '0',

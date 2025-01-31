@@ -1,12 +1,13 @@
-import { AuraBaseDesignTokens } from "@primeng/themes/aura/base";
+import { AuraBaseDesignTokens } from '@primeng/themes/aura/base';
 import { definePreset } from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
 
 import stepper from './components/stepper.preset';
 import card from './components/card.preset';
 import divider from './components/divider.preset';
-import fieldset  from "./components/fieldset.preset";
+import fieldset from './components/fieldset.preset';
 import accordion from './components/accordion.preset';
+import chip from './components/chip.preset';
 
 export const getAppThemePreset = () => {
   return definePreset(Aura, {
@@ -176,7 +177,8 @@ export const getAppThemePreset = () => {
       card,
       divider,
       fieldset,
-      accordion
-    }
+      accordion,
+      chip,
+    },
   } as AuraBaseDesignTokens);
 };
